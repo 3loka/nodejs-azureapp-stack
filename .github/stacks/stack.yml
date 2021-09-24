@@ -4,7 +4,7 @@ name: A stack to deploy nodejs app to Azure App
 description: A stack to deploy nodejs app to Azure App
 
 branding:
-  icon: 'aws.svg'
+  icon: 'thumbs-up'
   color: 'blue'
 
 inputs:
