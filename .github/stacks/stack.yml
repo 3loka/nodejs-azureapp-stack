@@ -1,0 +1,56 @@
+version: 0.1.0   
+
+<<<<<<< HEAD:.github/stacks/stack.yaml
+name: A stack to deploy nextjs site to Node JS
+description: A stack to deploy nextjs site to Node JS
+
+branding:
+  icon: 'cloud'
+=======
+name: A stack to deploy nodejs app to Azure App
+description: A stack to deploy nodejs app to Azure App
+
+branding:
+  icon: 'thumbs-up'
+>>>>>>> 1d2f4ff674eabfe262d69a3722d5a238a850af0a:.github/stacks/stack.yml
+  color: 'blue'
+
+inputs:
+  - name: AZURE_APP_NAME
+    description: Enter the name of the Azure App which has been configured to host the website
+    is-secret: true
+    required: true
+    
+  - name: AZURE_WEBAPP_PUBLISH_PROFILE
+    description: Enter the Azure Publish profile. 
+    is-secret: true
+    required: true
+  
+configs:
+  repo-metadata:
+      parameters:
+        description: 'A Nodejs website deployed in Azure App Service'
+        secrets: 
+          - name: AZURE_APP_NAME
+            value: ${{inputs.AZURE_APP_NAME}}
+          - name: AZURE_WEBAPP_PUBLISH_PROFILE
+            value: ${{inputs.AZURE_WEBAPP_PUBLISH_PROFILE}}
+        topics:
+        - nodejs
+        - expressjs
+        - azure
+
+  branches:   
+    - name: main
+      parameters:
+        dismiss-stale-reviews: true                      
+        required-approving-review-count: 0
+        require-code-owner-reviews: false
+
+  environments:                                        
+    - name: development
+      parameters:
+        protected-branches: false
+
+init:
+  uses: ".github/workflows/stack-init.yaml"
