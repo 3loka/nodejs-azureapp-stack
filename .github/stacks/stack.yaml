@@ -1,7 +1,7 @@
 version: 0.1.0   
 
-name: A stack to deploy nextjs site to Node JS
-description: A stack to deploy nextjs site to Node JS
+name: A stack to deploy nextjs site to NodeJS
+description: A stack to deploy nextjs site to NodeJS
 
 branding:
   icon: 'cloud'
